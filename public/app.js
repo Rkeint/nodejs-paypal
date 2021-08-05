@@ -6,7 +6,7 @@ const paypal = require("paypal-rest-sdk");
 const app = express();
 
 app.engine("ejs", engines.ejs);
-app.set("views", "./views");
+app.set("views", "./public");
 app.set("view engine", "ejs");
 
 app.use(bodyParser.json());
@@ -31,8 +31,8 @@ app.get("/paypal", (req, res) => {
             payment_method: "paypal"
         },
         redirect_urls: {
-            return_url: "http://localhost:3000/success",
-            cancel_url: "http://localhost:3000/cancel"
+            return_url: "https://saidia-ba480.web.app/success",
+            cancel_url: "https://saidia-ba480.web.app/cancel"
         },
         transactions: [
             {
